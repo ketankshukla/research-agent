@@ -1,4 +1,5 @@
 import * as cheerio from "cheerio";
+import type Anthropic from "@anthropic-ai/sdk";
 
 const MAX_CHARS = 6000;
 const FETCH_TIMEOUT_MS = 10000;
@@ -59,7 +60,7 @@ export async function fetchUrl(url: string): Promise<string> {
 /**
  * Anthropic tool-use schema definitions for the tools this agent can call.
  */
-export const toolDefinitions = [
+export const toolDefinitions: Anthropic.Tool[] = [
   {
     name: "fetch_url",
     description:
@@ -75,7 +76,7 @@ export const toolDefinitions = [
       required: ["url"],
     },
   },
-] as const;
+];
 
 /**
  * Dispatches a tool call by name to its implementation.
