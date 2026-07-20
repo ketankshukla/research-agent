@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# personal resume material (local only, not part of the project)
+RESUME_PROJECTS.md
+RESUME_PROJECTS.docx
